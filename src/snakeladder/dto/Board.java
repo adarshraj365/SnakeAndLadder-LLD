@@ -1,12 +1,16 @@
 package snakeladder.dto;
 
 public class Board {
-    private BoardCell[] board;
-
+    private BoardCell[] boardCells;
+    private int TOTAL_CELL = 100;
     public Board() {
-        this.board = new BoardCell[100];
-        for(int i = 0 ; i < 100; i++) {
-            this.board[i] =  new BoardCell(i+1);
+        this.boardCells = new BoardCell[TOTAL_CELL + 1];
+        for(int i = 0 ; i <= TOTAL_CELL; i++) {
+            this.boardCells[i] =  new BoardCell(i);
         }
+    }
+
+    public BoardCell getBoardCell(int index) {
+        return this.boardCells[index];
     }
 }
